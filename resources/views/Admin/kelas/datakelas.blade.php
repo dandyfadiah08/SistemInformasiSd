@@ -659,8 +659,8 @@
                     <tr align="center">
                       <td>{{ $kls->jenis_kelas }}</td>
                       <td>
-                          <a class="btn btn-info" href="{{ URL::to('edit/kelas/'.$kls->id_kelas)}}">Edit</a>
-                          <a class="btn btn-danger" href="{{ URL::to('delete/kelas/'.$kls->id_kelas)}}" onclick="return confirm('APAKAH KELAS {{$kls->jenis_kelas}} INI AKAN DIHAPUS?')">Hapus</a>
+                          <a class="btn btn-info" href="{{ URL::to('edit/kelas/'.$kls->id)}}">Edit</a>
+                          <a class="btn btn-danger" href="{{ URL::to('delete/kelas/'.$kls->id)}}" onclick="return confirm('APAKAH KELAS {{$kls->jenis_kelas}} INI AKAN DIHAPUS?')">Hapus</a>
                       </td>
                     </tr>
                      @endforeach

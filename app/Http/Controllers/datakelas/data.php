@@ -30,7 +30,7 @@ class data extends Controller
     						->with('success','Kelas Created Succesfully');
     }   
     public function Edit($id_kelas){
-        $kelas = DB::table('kelas')->where('id_kelas',$id_kelas)->first();
+        $kelas = DB::table('kelas')->where('id',$id_kelas)->first();
         return view('admin.kelas.editkelas',compact('kelas'));
     }
     public function Update(Request $request, $id_kelas){
@@ -40,13 +40,13 @@ class data extends Controller
             'jenis_kelas' => 'required'
 
         ]);
-        $tambah_kelas = DB::table('kelas')->where('id_kelas',$id_kelas)->update($data_kelas);
+        $tambah_kelas = DB::table('kelas')->where('id',$id_kelas)->update($data_kelas);
         return redirect()->route('kelas')
                             ->with('success','Kelas Update Succesfully');
     }
         public function Delete($id_kelas){
-        $kelas = DB::table('kelas')->where('id_kelas',$id_kelas)->first();
-        $hapuskelas = DB::table('kelas')->where('id_kelas',$id_kelas)->delete();
+        $kelas = DB::table('kelas')->where('id',$id_kelas)->first();
+        $hapuskelas = DB::table('kelas')->where('id',$id_kelas)->delete();
         return redirect()->route('kelas')
                             ->with('success','Kelas Deleted Succesfully');
     }

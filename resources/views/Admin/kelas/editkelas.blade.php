@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <h2 class="title" align="center">Form Edit Class</h2>
                     <div class="p-t-15" align="center">
-                    <form action="{{ url('update/kelas/'.$kelas->jenis_kelas)}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('update/kelas/'.$kelas->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                             <label class="label">NAMA KELAS</label>
                             <input class="input--style-4 col-2" type="text" name="jenis_kelas" value="{{ $kelas->jenis_kelas}}">
