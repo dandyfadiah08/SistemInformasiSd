@@ -38,6 +38,14 @@ Route::post('/storepelajaran','datapelajaran\data@Store')->name('tambah.pelajara
 Route::get('edit/pelajaran/{id_pelajaran}','datapelajaran\data@Edit');
 Route::get('delete/pelajaran/{id_pelajaran}','datapelajaran\data@Delete');
 Route::post('update/pelajaran/{id_pelajaran}','datapelajaran\data@Update');
+//Guru
+Route::get('/dataguru','dataguru\data@guru')->name('guru');
+Route::get('show/detail/{NUPTK}','dataguru\data@detail_guru');
+Route::get('/create/guru','dataguru\data@create')->name('create.guru');
+Route::post('/storeguru','dataguru\data@Store')->name('tambah.guru');
+Route::get('delete/guru/{NUPTK}','dataguru\data@Delete');
+Route::get('edit/guru/{NUPTK}','dataguru\data@Edit');
+Route::post('update/guru/{NUPTK}','dataguru\data@Update');
 //siswa
 Route::get('/datasiswa','datasiswa\data@siswa')->name('siswa');
 Route::get('show/detail/{NIK}','datasiswa\data@detail_siswa');

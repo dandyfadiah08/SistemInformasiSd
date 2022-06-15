@@ -729,7 +729,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>TEMPAT TANGGAL LAHIR</label>
-                        <input type="text" name="ttl" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="ttl" class="form-control" placeholder="Tempat,Tanggal-Bulan-Tahun">
                       </div>
                     </div>
                   </div>
