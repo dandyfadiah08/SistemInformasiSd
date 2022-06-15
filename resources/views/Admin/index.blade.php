@@ -196,11 +196,43 @@
               </p>
             </a>        
           </li>
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('pelajaran') }}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                DATA MATA PELAJARAN
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('kelas') }}" class="nav-link">
+              <i class="nav-icon  fas fa-child"></i>
+              <p>
+                DATA GURU
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('kelas') }}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                ABSENSI GURU
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview">
             <a href="{{ route('siswa') }}" class="nav-link">
               <i class="nav-icon fas fa-child"></i>
               <p>
                 DATA SISWA
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('siswa') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                E-Raport Siswa
               </p>
             </a>
           </li>

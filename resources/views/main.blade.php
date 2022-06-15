@@ -32,7 +32,6 @@
     </head>
     <body>  
       <header id="header" id="home">
-        @crsf
         <div class="container main-menu">
           <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">

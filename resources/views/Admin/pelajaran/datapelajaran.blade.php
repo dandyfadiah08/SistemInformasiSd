@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Tambah Siswa</title>
+  <title>Admin | Data  Pelajaran</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
@@ -15,17 +14,6 @@
   <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Vendor CSS-->
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/datepicker/daterangepicker.css') }}" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/css/main.css') }}" rel="stylesheet" media="all">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -180,7 +168,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview">
             <a href="{{ route('IndexAdmin') }}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -188,7 +176,7 @@
               </p>
             </a>
           </li>
-         <li class="nav-item has-treeview">
+         <li class="nav-item has-treeview ">
             <a href="{{ route('kelas') }}" class="nav-link ">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -196,16 +184,15 @@
               </p>
             </a>
           </li>
-          </li>
-          <li class="nav-item has-treeview ">
-            <a href="{{ route('pelajaran') }}" class="nav-link">
+          <li class="nav-item has-treeview menu-open">
+            <a href="{{ route('pelajaran') }}" class="nav-link active">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 DATA MATA PELAJARAN
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview ">
             <a href="{{ route('kelas') }}" class="nav-link">
               <i class="nav-icon  fas fa-child"></i>
               <p>
@@ -221,8 +208,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview menu-open">
-            <a href="{{ route('siswa') }}" class="nav-link active">
+          <li class="nav-item has-treeview">
+            <a href="{{ route('siswa') }}" class="nav-link">
               <i class="nav-icon fas fa-child"></i>
               <p>
                 DATA SISWA
@@ -652,238 +639,83 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <div class="#">
-          <div  align="center">
-            <h1>INSERT DATA SISWA</h1>
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 >DATA MATA PELAJARAN SD 02 CILILIN</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <div>
+              <a href="{{ route('create.pelajaran')}}"><button type="button" class="btn btn-block btn-primary">TAMBAH MATA PELAJARAN</button></a>
+              </div>
+            </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
+           
     </section>
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+                <!-- /.row -->
         <div class="row">
-          <!-- left column -->
-          <div class="#">
-            
-            
-            <!-- /.card -->
-            
-
-          </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <div class="col-md-12">
-            <!-- general form elements disabled -->
-            <div class="card card-warning">
+          <div class="col-12">
+            <div class="card">
               <div class="card-header">
-                <h3 class="card-title"   >ISI BIODATA SISWA</h3>
+                <h3 class="card-title">Data-Data Mata Pelajaran yang Tersedia</h3>
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
-                <form role="form" action="{{ route('tambah.siswa')}}" method="POST" enctype="multipart/form-data">
-                  @csrf
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- select -->
-                      <div class="form-group">
-                        <label>KELAS</label>
-                        <select name="id" class="form-control" >
-                          <option>PILIH KELAS</option>
-                          @foreach($kelas as $item)
-                              <option value="{{ $item->id}}">{{ $item->jenis_kelas}}</option>
-                          @endforeach
-                        </select>
-                      </div>
-                    </div>
-                  </div>
+              <div class="card-body table-responsive p-0">
+                @if($message = Session::get('success'))
+                <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">{{ $message }}</h3>
 
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NIK</label>
-                        <input type="text" name="NIK" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NIS</label>
-                        <input type="text" name="nis" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA SISWA</label>
-                        <input type="text" name="nama_siswa" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>TEMPAT TANGGAL LAHIR</label>
-                        <input type="text" name="ttl" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label>FOTO SISWA</label>
-                      <div class="custom-file">
-                        <input type="file" name="foto_siswa" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-                      <!-- radio -->
-                  <div class="col-sm-6">
-                      <div class="form-group">
-                        <label> JENIS KELAMIN</label>
-                        <select class="form-control" name="jenis_kelamin">
-                              <option value="">-Pilih-</option>
-                              <option value="LAKI-LAKI">LAKI-LAKI</option>
-                              <option value="PEREMPUAN">PEREMPUAN</option>                             
-                        </select>
-                    </div>
-                  </div>
-                 </div>   
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>AGAMA</label>
-                        <input type="text" name="agama" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PENDIDIKAN SEBELUMNYA</label>
-                        <input type="text" name="pendidikan_sebelumnya" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT SISWA</label>
-                        <textarea class="form-control" name="alamat_siswa" rows="3" placeholder="ISI YANG SESUAI....."></textarea>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA AYAH</label>
-                        <input type="text" name="nama_ayah" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA IBU</label>
-                        <input type="text" name="nama_ibu" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN AYAH</label>
-                        <input type="text" name="pekerjaan_ayah" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN IBU</label>
-                        <input type="text" name="pekerjaan_ibu" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT AYAH</label>
-                        <textarea class="form-control" name="alamat_ayah" rows="3" placeholder="ISI YANG SESUAI....."></textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT IBU</label>
-                        <textarea class="form-control" name="alamat_ibu" rows="3" placeholder="ISI YANG SESUAI....."></textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA WALI</label>
-                        <input type="text" name="nama_wali" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN WALI</label>
-                        <input type="text" name="pekerjaan_wali" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT WALI</label>
-                        <textarea class="form-control" name="alamat_wali" rows="3" placeholder="ISI YANG SESUAI....."></textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group" align=" right " >
-                         <button class="btn btn--radius-2 btn--blue" type="submit">SIMPAN</button>
-                      </div>
-                    </div>
-                  </div>
-
-                </form>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+          </div>
+                    <!-- <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div> -->
+                @endif
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr align="center">
+                      <th>Mata Pelajaran</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach($pelajaran as $pjl)
+                    <tr align="center">
+                      <td>{{ $pjl->mata_pelajaran }}</td>
+                      <td>
+                          <a class="btn btn-info" href="{{ URL::to('edit/pelajaran/'.$pjl->id)}}">Edit</a>
+                          <a class="btn btn-danger" href="{{ URL::to('delete/pelajaran/'.$pjl->id)}}" onclick="return confirm('APAKAH MATA PELAJARAN {{$pjl->mata_pelajaran}} INI AKAN DIHAPUS?')">Hapus</a>
+                      </td>
+                    </tr>
+                     @endforeach
+                  </tbody>
+                </table>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-            
-          <!--/.col (right) -->
+          </div>
         </div>
-        <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
@@ -893,7 +725,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.0.5
     </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    <strong>Copyright &copy;2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -909,16 +741,9 @@
 <script src="{{ asset('AdminLTE-3.0.5/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('AdminLTE-3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- bs-custom-file-input -->
-<script src="{{ asset('AdminLTE-3.0.5/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('AdminLTE-3.0.5/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('AdminLTE-3.0.5/dist/js/demo.js') }}"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-  bsCustomFileInput.init();
-});
-</script>
 </body>
 </html>

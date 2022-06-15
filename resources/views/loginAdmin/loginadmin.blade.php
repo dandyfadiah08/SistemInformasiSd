@@ -32,19 +32,26 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-b-160 p-t-50">
-				<form class="login100-form validate-form">
+				<form action="{{ route('login-admin')}}" method="POST" enctype="multipart/form-data" class="login100-form validate-form" >
+				@if(Session::has('success'))
+				<div class="alert alert-success">{{Session::get('success')}}</div>
+				@endif
+				@if(Session::has('fail'))
+				<div class="alert alert-success">{{Session::get('fail')}}</div>
+				@endif
+				@csrf
 					<span class="login100-form-title p-b-43">
 						ADMINISTRASI Login
 					</span>
 					
 					<div class="wrap-input100 rs1 validate-input" data-validate = "Username is required">
-						<input class="input100" type="text" name="username">
-						<span class="label-input100">Username</span>
+						<input class="input100" type="email" name="email" value="{{old('email')}}">
+						<span class="label-input100">Email</span>
 					</div>
 					
 					
 					<div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="password" value="{{old('password')}}">
 						<span class="label-input100">Password</span>
 					</div>
 

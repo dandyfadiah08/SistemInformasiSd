@@ -189,11 +189,44 @@
             </a>
           </li>
           </li>
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('pelajaran') }}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                DATA MATA PELAJARAN
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="{{ route('kelas') }}" class="nav-link">
+              <i class="nav-icon  fas fa-child"></i>
+              <p>
+                DATA GURU
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('kelas') }}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                ABSENSI GURU
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview menu-open">
             <a href="{{ route('siswa') }}" class="nav-link active">
               <i class="nav-icon fas fa-child"></i>
               <p>
                 DATA SISWA
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('siswa') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                E-Raport Siswa
               </p>
             </a>
           </li>
@@ -640,9 +673,17 @@
               <!-- /.card-header -->
               <div class="card-body">
                 @if($message = Session::get('success'))
-                      <div class="alert alert-success">
-                           <p>{{ $message }}</p>   
-                      </div>
+                <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">{{ $message }}</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+          </div>
                 @endif
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
@@ -664,9 +705,9 @@
                       <td>
                           <a class="btn btn-block bg-gradient-info" href="{{ URL::to('show/detail/'.$s->NIK) }}">Show</a>
                           <hr>
-                          <a class="btn btn-block bg-gradient-warning" href="">Edit</a>
+                          <a class="btn btn-block bg-gradient-warning" href="{{ URL::to('edit/siswa/'.$s->NIK)}}">Edit</a>
                           <hr>
-                          <a class="btn btn-block bg-gradient-danger" href="">Hapus</a>
+                          <a class="btn btn-block bg-gradient-danger" href="{{ URL::to('delete/siswa/'.$s->NIK)}}" onclick="return confirm('APAKAH Data Siswa {{$s->nama_siswa}} INI AKAN DIHAPUS?')">Hapus</a>
                       </td>
                     </tr>
                      @endforeach

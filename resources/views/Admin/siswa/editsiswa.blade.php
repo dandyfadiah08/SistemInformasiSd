@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Tambah Siswa</title>
+  <title>Admin | Edit Siswa</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -654,7 +654,7 @@
       <div class="container-fluid">
         <div class="#">
           <div  align="center">
-            <h1>INSERT DATA SISWA</h1>
+            <h1>UBAH DATA SISWA</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -682,7 +682,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form role="form" action="{{ route('tambah.siswa')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('update/siswa/'.$siswa->NIK)}}" method="POST" enctype="multipart/form-data">
                   @csrf
                   <div class="row">
                     <div class="col-sm-6">
@@ -690,9 +690,12 @@
                       <div class="form-group">
                         <label>KELAS</label>
                         <select name="id" class="form-control" >
-                          <option>PILIH KELAS</option>
                           @foreach($kelas as $item)
-                              <option value="{{ $item->id}}">{{ $item->jenis_kelas}}</option>
+                            @if($item->id == $siswa->id)
+                              <option value="{{ $item->id}}" selected>{{ $item->jenis_kelas}}</option>
+                            @elseif($item->id != $siswa->id)
+                            <option value="{{ $item->id}}">{{ $item->jenis_kelas}}</option>
+                            @endif
                           @endforeach
                         </select>
                       </div>
@@ -705,14 +708,14 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>NIK</label>
-                        <input type="text" name="NIK" class="form-control" placeholder="Enter ...">
+                        <input type="text" readonly name="NIK" class="form-control" value="{{$siswa->NIK}}">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                         <label>NIS</label>
-                        <input type="text" name="nis" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="nis" class="form-control" value="{{$siswa->nis}}">
                       </div>
                     </div>
                   </div>
@@ -722,14 +725,14 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>NAMA SISWA</label>
-                        <input type="text" name="nama_siswa" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="nama_siswa" class="form-control" value="{{$siswa->nama_siswa}}">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                         <label>TEMPAT TANGGAL LAHIR</label>
-                        <input type="text" name="ttl" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="ttl" class="form-control" value="{{$siswa->ttl}}">
                       </div>
                     </div>
                   </div>
@@ -739,17 +742,29 @@
                     <div class="form-group">
                       <label>FOTO SISWA</label>
                       <div class="custom-file">
-                        <input type="file" name="foto_siswa" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="foto_siswa" class="custom-file-input" value="$siswa->foto_siswa" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">{{$siswa->foto_siswa}}</label>
                       </div>
+                      <img class="mt-2" src="{{ URL::to($siswa->foto_siswa)}}" height="150px;" width="200px;" >
                     </div>
                   </div>
                       <!-- radio -->
                   <div class="col-sm-6">
                       <div class="form-group">
                         <label> JENIS KELAMIN</label>
+                        <!-- @if($siswa->jenis_kelamin == "LAKI-LAKI")
+                            <select class="form-control ">
+                              <option value="LAKI-LAKI" selected>Laki - Laki</option>
+                              <option value="PEREMPUAN">PEREMPUAN</option>
+                            </select>
+                        @elseif($siswa->jenis_kelamin == "PEREMPUAN")
+                            <select  class="form-control ">
+                              <option value="LAKI-LAKI">LAKI - LAKI</option>
+                              <option value="PEREMPUAN" selected>PEREMPUAN</option>
+                            </select>
+                        @endif -->
                         <select class="form-control" name="jenis_kelamin">
-                              <option value="">-Pilih-</option>
+                              <option value="{{$siswa->jenis_kelamin }}">-Pilih-</option>
                               <option value="LAKI-LAKI">LAKI-LAKI</option>
                               <option value="PEREMPUAN">PEREMPUAN</option>                             
                         </select>
@@ -762,14 +777,14 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>AGAMA</label>
-                        <input type="text" name="agama" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="agama" value="{{$siswa->agama}}"  class="form-control" >
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                         <label>PENDIDIKAN SEBELUMNYA</label>
-                        <input type="text" name="pendidikan_sebelumnya" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="pendidikan_sebelumnya" class="form-control" value="{{$siswa->pendidikan_sebelumnya}}">
                       </div>
                     </div>
                   </div>
@@ -779,7 +794,7 @@
                       <!-- textarea -->
                       <div class="form-group">
                         <label>ALAMAT SISWA</label>
-                        <textarea class="form-control" name="alamat_siswa" rows="3" placeholder="ISI YANG SESUAI....."></textarea>
+                        <textarea class="form-control" name="alamat_siswa" rows="3" >{{$siswa->alamat_siswa}}</textarea>
                       </div>
                     </div>
                   </div>
@@ -790,14 +805,14 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>NAMA AYAH</label>
-                        <input type="text" name="nama_ayah" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="nama_ayah" class="form-control" value="{{$siswa->nama_ayah}}">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                         <label>NAMA IBU</label>
-                        <input type="text" name="nama_ibu" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="nama_ibu" class="form-control" value="{{$siswa->nama_ibu}}">
                       </div>
                     </div>
                   </div>
@@ -807,14 +822,14 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>PEKERJAAN AYAH</label>
-                        <input type="text" name="pekerjaan_ayah" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="pekerjaan_ayah" class="form-control" value="{{$siswa->pekerjaan_ayah}}">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                         <label>PEKERJAAN IBU</label>
-                        <input type="text" name="pekerjaan_ibu" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="pekerjaan_ibu" class="form-control" value="{{$siswa->pekerjaan_ibu}}">
                       </div>
                     </div>
                   </div>
@@ -824,7 +839,7 @@
                       <!-- textarea -->
                       <div class="form-group">
                         <label>ALAMAT AYAH</label>
-                        <textarea class="form-control" name="alamat_ayah" rows="3" placeholder="ISI YANG SESUAI....."></textarea>
+                        <textarea class="form-control" name="alamat_ayah" rows="3" >{{$siswa->alamat_ayah}}</textarea>
                       </div>
                     </div>
                   </div>
@@ -834,7 +849,7 @@
                       <!-- textarea -->
                       <div class="form-group">
                         <label>ALAMAT IBU</label>
-                        <textarea class="form-control" name="alamat_ibu" rows="3" placeholder="ISI YANG SESUAI....."></textarea>
+                        <textarea class="form-control" name="alamat_ibu" rows="3" >{{$siswa->alamat_ibu}}</textarea>
                       </div>
                     </div>
                   </div>
@@ -844,14 +859,14 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>NAMA WALI</label>
-                        <input type="text" name="nama_wali" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="nama_wali" class="form-control" value="{{$siswa->nama_wali}}">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                         <label>PEKERJAAN WALI</label>
-                        <input type="text" name="pekerjaan_wali" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="pekerjaan_wali" class="form-control" value="{{$siswa->pekerjaan_wali}}">
                       </div>
                     </div>
                   </div>
@@ -861,7 +876,7 @@
                       <!-- textarea -->
                       <div class="form-group">
                         <label>ALAMAT WALI</label>
-                        <textarea class="form-control" name="alamat_wali" rows="3" placeholder="ISI YANG SESUAI....."></textarea>
+                        <textarea class="form-control" name="alamat_wali" rows="3" >{{$siswa->alamat_wali}}</textarea>
                       </div>
                     </div>
                   </div>
@@ -870,7 +885,7 @@
                     <div class="col-sm-12">
                       <!-- textarea -->
                       <div class="form-group" align=" right " >
-                         <button class="btn btn--radius-2 btn--blue" type="submit">SIMPAN</button>
+                         <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                       </div>
                     </div>
                   </div>

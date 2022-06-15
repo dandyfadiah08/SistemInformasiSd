@@ -27,7 +27,7 @@ class data extends Controller
     	]);
     	$tambah_kelas = DB::table('kelas')->insert($data_kelas);
     	return redirect()->route('kelas')
-    						->with('success','Kelas Created Succesfully');
+    						->with('success','Kelas Created Succesfully',200);
     }   
     public function Edit($id_kelas){
         $kelas = DB::table('kelas')->where('id',$id_kelas)->first();

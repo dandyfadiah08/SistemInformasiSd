@@ -180,6 +180,7 @@
               </p>
             </a>
           </li>
+
          <li class="nav-item has-treeview">
             <a href="{{ route('kelas') }}" class="nav-link ">
               <i class="nav-icon fas fa-table"></i>
@@ -189,11 +190,43 @@
             </a>
           </li>
           </li>
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('pelajaran') }}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                DATA MATA PELAJARAN
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('kelas') }}" class="nav-link ">
+              <i class="nav-icon  fas fa-child"></i>
+              <p>
+                DATA GURU
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('kelas') }}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                ABSENSI GURU
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview menu-open">
             <a href="{{ route('siswa') }}" class="nav-link active">
               <i class="nav-icon fas fa-child"></i>
               <p>
                 DATA SISWA
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('siswa') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                E-Raport Siswa
               </p>
             </a>
           </li>
@@ -648,44 +681,44 @@
                       <th>NIK</th><td>{{ $s->NIK }}</td><th>NIS</th><td>{{ $s->nis }}</td>
                     </tr>
                     <tr >
-                      <th></th><td align="center" ><img src="{{ URL::to($s->foto_siswa)}}" height="150px;" width="200px;" ></td><td></td><td></td>
+                      <th><p class="mb-5"><b>Gambar Siswa <br><br><br><br></b></p></th><td colspan="3"><img  src="{{ URL::to($s->foto_siswa)}}" height="150px;" width="200px;" ></td>
                     </tr>
                     <tr >
-                      <th>NAMA SISWA</th><td>{{ $s->nama_siswa }}</td><td></td><td></td>
+                      <th>NAMA SISWA</th><td colspan="3">{{ $s->nama_siswa }}</td>
                     </tr>
                     <tr >
-                      <th>TEMPAT TANGGAL LAHIR</th><td>{{ $s->ttl }}</td><td></td><td></td>
+                      <th>TEMPAT TANGGAL LAHIR</th><td colspan="3">{{ $s->ttl }}</td>
                     </tr>
                     <tr >
-                      <th>JENIS KELAMIN</th><td>{{ $s->jenis_kelamin }}</td><td></td><td></td>
+                      <th>JENIS KELAMIN</th><td colspan="3">{{ $s->jenis_kelamin }}</td>
                     </tr>
                     <tr >
-                      <th>AGAMA</th><td>{{ $s->agama }}</td><td></td><td></td>
+                      <th>AGAMA</th><td colspan="3">{{ $s->agama }}</td>
                     </tr>
                     <tr >
-                      <th>PENDIDIKAN SEBELUMNYA</th><td>{{ $s->pendidikan_sebelumnya }}</td><td></td><td></td>
+                      <th>PENDIDIKAN SEBELUMNYA</th><td colspan="3">{{ $s->pendidikan_sebelumnya }}</td>
                     </tr>
                     <tr >
-                      <th>NAMA AYAH</th><td>{{ $s->nama_ayah }}</td><td></td><td></td>
+                      <th>NAMA AYAH</th><td colspan="3">{{ $s->nama_ayah }}</td>
                     </tr>
                     <tr >
-                      <th>NAMA IBU</th><td>{{ $s->nama_ibu }}</td><td></td><td></td>
+                      <th>NAMA IBU</th><td colspan="3">{{ $s->nama_ibu }}</td>
                     </tr>
                     <tr >
-                      <th>PEKERJAAN AYAH</th><td>{{ $s->pekerjaan_ayah }}</td><td></td><td></td>
+                      <th>PEKERJAAN AYAH</th><td colspan="3">{{ $s->pekerjaan_ayah }}</td>
                     </tr>
                     <tr >
-                      <th>PEKERJAAN IBU</th><td>{{ $s->pekerjaan_ibu }}</td><td></td><td></td>
+                      <th>PEKERJAAN IBU</th><td colspan="3">{{ $s->pekerjaan_ibu }}</td>
                     </tr>
-                      <th>ALAMAT AYAH</th><td>{{ $s->alamat_ayah }}</td><td></td><td></td>
+                      <th>ALAMAT AYAH</th><td colspan="3">{{ $s->alamat_ayah }}</td>
                     </tr>
-                      <th>ALAMAT IBU</th><td>{{ $s->alamat_ibu }}</td><td></td><td></td>
+                      <th>ALAMAT IBU</th><td colspan="3">{{ $s->alamat_ibu }}</td>
                     </tr>
-                      <th>NAMA WALI</th><td>{{ $s->nama_wali }}</td><td></td><td></td>
+                      <th>NAMA WALI</th><td colspan="3">{{ $s->nama_wali }}</td>
                     </tr>
-                      <th>PEKERJAAN WALI</th><td>{{ $s->pekerjaan_wali }}</td><td></td><td></td>
+                      <th>PEKERJAAN WALI</th><td colspan="3">{{ $s->pekerjaan_wali }}</td>
                     </tr>
-                      <th>ALAMAT WALI</th><td>{{ $s->alamat_wali }}</td><td></td><td></td>
+                      <th>ALAMAT WALI</th><td colspan="3">{{ $s->alamat_wali }}</td>
                     </tr>
                      @endforeach
       

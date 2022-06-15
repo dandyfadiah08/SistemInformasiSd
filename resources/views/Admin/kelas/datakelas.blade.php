@@ -7,7 +7,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/../../plugins/fontawesome-free/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
@@ -184,11 +184,43 @@
               </p>
             </a>
           </li>
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('pelajaran') }}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                DATA MATA PELAJARAN
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('kelas') }}" class="nav-link">
+              <i class="nav-icon  fas fa-child"></i>
+              <p>
+                DATA GURU
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('kelas') }}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                ABSENSI GURU
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview">
             <a href="{{ route('siswa') }}" class="nav-link">
               <i class="nav-icon fas fa-child"></i>
               <p>
                 DATA SISWA
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('siswa') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                E-Raport Siswa
               </p>
             </a>
           </li>
@@ -620,6 +652,7 @@
           </div>
         </div>
       </div><!-- /.container-fluid -->
+           
     </section>
 
     <!-- Main content -->
@@ -643,9 +676,20 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 @if($message = Session::get('success'))
-                    <div class="alert alert-success">
+                <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">{{ $message }}</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+          </div>
+                    <!-- <div class="alert alert-success">
                         <p>{{ $message }}</p>
-                    </div>
+                    </div> -->
                 @endif
                 <table class="table table-hover text-nowrap">
                   <thead>
