@@ -26,4 +26,7 @@ class LoginAdmin extends Controller
             return back()->with('fail','Email Belum Terdaftar');
         }
     }
+     public function adminlogout(){
+        return view('admin.kelas.tambahkelas');
+    }
 }

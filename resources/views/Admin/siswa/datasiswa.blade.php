@@ -199,7 +199,7 @@
           </li>
 
           <li class="nav-item has-treeview">
-            <a href="{{ route('kelas') }}" class="nav-link">
+            <a href="{{ route('guru') }}" class="nav-link">
               <i class="nav-icon  fas fa-child"></i>
               <p>
                 DATA GURU
@@ -703,7 +703,7 @@
                       <td>{{ $s->nis }}</td>
                       <td>{{ $s->nama_siswa }}</td>
                       <td>
-                          <a class="btn btn-block bg-gradient-info" href="{{ URL::to('show/detail/'.$s->NIK) }}">Show</a>
+                          <a class="btn btn-block bg-gradient-info" href="{{ URL::to('show/detail/siswa/'.$s->NIK) }}">Show</a>
                           <hr>
                           <a class="btn btn-block bg-gradient-warning" href="{{ URL::to('edit/siswa/'.$s->NIK)}}">Edit</a>
                           <hr>

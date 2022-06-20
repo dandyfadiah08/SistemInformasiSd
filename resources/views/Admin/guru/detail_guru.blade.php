@@ -3,29 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Edit Siswa</title>
+  <title>Admin |  Detail Guru</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
+  <!-- DataTables -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Vendor CSS-->
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/datepicker/daterangepicker.css') }}" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/css/main.css') }}" rel="stylesheet" media="all">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -180,7 +172,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview">
+  <li class="nav-item has-treeview">
             <a href="{{ route('IndexAdmin') }}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -188,6 +180,7 @@
               </p>
             </a>
           </li>
+
          <li class="nav-item has-treeview">
             <a href="{{ route('kelas') }}" class="nav-link ">
               <i class="nav-icon fas fa-table"></i>
@@ -205,8 +198,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="{{ route('guru') }}" class="nav-link">
+          <li class="nav-item has-treeview menu-open">
+            <a href="{{ route('guru') }}" class="nav-link active">
               <i class="nav-icon  fas fa-child"></i>
               <p>
                 DATA GURU
@@ -221,8 +214,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview menu-open">
-            <a href="{{ route('siswa') }}" class="nav-link active">
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('siswa') }}" class="nav-link ">
               <i class="nav-icon fas fa-child"></i>
               <p>
                 DATA SISWA
@@ -238,7 +231,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Charts
@@ -652,9 +645,16 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <div class="#">
-          <div  align="center">
-            <h1>UBAH DATA SISWA</h1>
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>DATA PTK SD NEGERI 02 CILILIN</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <div>
+              <a href="#"><button type="button" class="btn btn-block btn-primary">PRINT</button></a>
+              </div>
+            </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -664,242 +664,42 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <!-- left column -->
-          <div class="#">
-            
-            
-            <!-- /.card -->
-            
-
-          </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <div class="col-md-12">
-            <!-- general form elements disabled -->
-            <div class="card card-warning">
+          <div class="col-12">
+            <div class="card">
               <div class="card-header">
-                <h3 class="card-title"   >ISI BIODATA SISWA</h3>
+                @foreach($guru as $g)
+                <h3 class="card-title">BIODATA GURU</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form action="{{ url('update/siswa/'.$siswa->NIK)}}" method="POST" enctype="multipart/form-data">
-                  @csrf
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- select -->
-                      <div class="form-group">
-                        <label>KELAS</label>
-                        <select name="id" class="form-control" >
-                          @foreach($kelas as $item)
-                            @if($item->id == $siswa->id)
-                              <option value="{{ $item->id}}" selected>{{ $item->jenis_kelas}}</option>
-                            @elseif($item->id != $siswa->id)
-                            <option value="{{ $item->id}}">{{ $item->jenis_kelas}}</option>
-                            @endif
-                          @endforeach
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NIK</label>
-                        <input type="text" readonly name="NIK" class="form-control" value="{{$siswa->NIK}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NIS</label>
-                        <input type="text" name="nis" class="form-control" value="{{$siswa->nis}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA SISWA</label>
-                        <input type="text" name="nama_siswa" class="form-control" value="{{$siswa->nama_siswa}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>TEMPAT TANGGAL LAHIR</label>
-                        <input type="text" name="ttl" class="form-control" value="{{$siswa->ttl}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label>FOTO SISWA</label>
-                      <div class="custom-file">
-                        <input type="file" name="foto_siswa" class="custom-file-input" value="$siswa->foto_siswa" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">{{$siswa->foto_siswa}}</label>
-                      </div>
-                      <img class="mt-2" src="{{ URL::to($siswa->foto_siswa)}}" height="150px;" width="200px;" >
-                    </div>
-                  </div>
-                      <!-- radio -->
-                  <div class="col-sm-6">
-                      <div class="form-group">
-                        <label> JENIS KELAMIN</label>
-                        <!-- @if($siswa->jenis_kelamin == "LAKI-LAKI")
-                            <select class="form-control ">
-                              <option value="LAKI-LAKI" selected>Laki - Laki</option>
-                              <option value="PEREMPUAN">PEREMPUAN</option>
-                            </select>
-                        @elseif($siswa->jenis_kelamin == "PEREMPUAN")
-                            <select  class="form-control ">
-                              <option value="LAKI-LAKI">LAKI - LAKI</option>
-                              <option value="PEREMPUAN" selected>PEREMPUAN</option>
-                            </select>
-                        @endif -->
-                        <select class="form-control" name="jenis_kelamin">
-                              <option value="{{$siswa->jenis_kelamin }}">-Pilih-</option>
-                              <option value="LAKI-LAKI">LAKI-LAKI</option>
-                              <option value="PEREMPUAN">PEREMPUAN</option>                             
-                        </select>
-                    </div>
-                  </div>
-                 </div>   
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>AGAMA</label>
-                        <input type="text" name="agama" value="{{$siswa->agama}}"  class="form-control" >
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PENDIDIKAN SEBELUMNYA</label>
-                        <input type="text" name="pendidikan_sebelumnya" class="form-control" value="{{$siswa->pendidikan_sebelumnya}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT SISWA</label>
-                        <textarea class="form-control" name="alamat_siswa" rows="3" >{{$siswa->alamat_siswa}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA AYAH</label>
-                        <input type="text" name="nama_ayah" class="form-control" value="{{$siswa->nama_ayah}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA IBU</label>
-                        <input type="text" name="nama_ibu" class="form-control" value="{{$siswa->nama_ibu}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN AYAH</label>
-                        <input type="text" name="pekerjaan_ayah" class="form-control" value="{{$siswa->pekerjaan_ayah}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN IBU</label>
-                        <input type="text" name="pekerjaan_ibu" class="form-control" value="{{$siswa->pekerjaan_ibu}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT AYAH</label>
-                        <textarea class="form-control" name="alamat_ayah" rows="3" >{{$siswa->alamat_ayah}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT IBU</label>
-                        <textarea class="form-control" name="alamat_ibu" rows="3" >{{$siswa->alamat_ibu}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA WALI</label>
-                        <input type="text" name="nama_wali" class="form-control" value="{{$siswa->nama_wali}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN WALI</label>
-                        <input type="text" name="pekerjaan_wali" class="form-control" value="{{$siswa->pekerjaan_wali}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT WALI</label>
-                        <textarea class="form-control" name="alamat_wali" rows="3" >{{$siswa->alamat_wali}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group" align=" right " >
-                         <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
-                      </div>
-                    </div>
-                  </div>
-
-                </form>
+                <table id="#" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>NUPTK</th><td>{{ $g->NUPTK }}</td><th>NIP</th><td>{{ $g->NIP }}</td>
+                    </tr>
+                    <tr>
+                      <th>NAMA GURU</th><td>{{ $g->nama_guru }}</td><th>JENIS KELAMIN</th><td>{{ $g->jenis_kelamin }}</td>
+                    </tr>
+                    <tr>
+                      <th>TEMPAT,TANGGAL lAHIR</th><td>{{ $g->ttl }}</td><th>STATUS KEPEGAWAIAN</th><td>{{ $g->status_kepegawaian }}</td>
+                    </tr>
+                    <tr>
+                      <th>JENIS PTK</th><td>{{ $g->jenis_ptk }}</td><th>TOTAL JJM</th><td>{{ $g->total_JJM }}</td>
+                    </tr>
+                     @endforeach
+      
+                  </tfoot>
+                </table>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-            
-          <!--/.col (right) -->
+          </div>
+          <!-- /.col -->
         </div>
         <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
@@ -924,16 +724,32 @@
 <script src="{{ asset('AdminLTE-3.0.5/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('AdminLTE-3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- bs-custom-file-input -->
-<script src="{{ asset('AdminLTE-3.0.5/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+<!-- DataTables -->
+<script src="{{ asset('AdminLTE-3.0.5/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('AdminLTE-3.0.5/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('AdminLTE-3.0.5/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('AdminLTE-3.0.5/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('AdminLTE-3.0.5/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('AdminLTE-3.0.5/dist/js/demo.js') }}"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-  bsCustomFileInput.init();
-});
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
 </script>
 </body>
 </html>

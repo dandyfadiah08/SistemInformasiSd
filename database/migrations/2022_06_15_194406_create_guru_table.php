@@ -19,9 +19,9 @@ class CreateGuruTable extends Migration
             $table->string('jenis_kelamin');
             $table->string('ttl', 100);
             $table->bigInteger('NIP')->nullable();
-            $table->string('pendidikan_sebelumnya');
             $table->string('status_kepegawaian');
             $table->string('jenis_ptk');
+            $table->bigInteger('total_JJM');
             $table->timestamps();
         });
     }

@@ -46,12 +46,12 @@
                 <li><a href="gallery.html">Gallery SDN 02 Cililin</a></li>
                 <li class="menu-has-children"><a href="#">Login</a>
                   <ul>
-                      <li><a href="{{ route('LOGINADMIN') }}">Admin</a></li>   
-                      <li><a href="event-details.html">Panitia Penerimaan Peserta Didik</a></li>   
-                      <li><a href="{{ route('LOGINPENDAFTAR') }}">Pendaftar</a></li>
-                      <li><a href="elements.html">Guru</a></li>
-                      <li><a href="elements.html">Wali Kelas</a></li>
-                      <li><a href="elements.html">Siswa</a></li>
+                      <li><a href="{{ route('LOGINADMIN') }}">Kepala Sekolah</a></li>   
+                      <!-- <li><a href="event-details.html">Panitia Penerimaan Peserta Didik</a></li>   
+                      <li><a href="{{ route('LOGINPENDAFTAR') }}">Pendaftar</a></li> -->
+                      <li><a href="{{ route('LOGINGURU') }}">Guru</a></li>
+                      <!-- <li><a href="elements.html">Wali Kelas</a></li> -->
+                      <li><a href="elements.html">Orang Tua Siswa</a></li>
                   </ul>
                 </li>                                                     
                 <li><a href="contact.html">Contact</a></li>

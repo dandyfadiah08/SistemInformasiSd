@@ -3,29 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Edit Siswa</title>
+  <title>AdminLTE 3 | Advanced form elements</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/daterangepicker/daterangepicker.css')}}">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css')}}">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/select2/css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+  <!-- Bootstrap4 Duallistbox -->
+  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assetsadmin/dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Vendor CSS-->
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/vendor/datepicker/daterangepicker.css') }}" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-  <link href="{{ asset('colorlib-regform-4/colorlib-regform-4/css/main.css') }}" rel="stylesheet" media="all">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -68,7 +73,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="{{ asset('AdminLTE-3.0.5/dist/img/user1-128x128.jpg') }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="{{ asset('assetsadmin/dist/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -84,7 +89,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="{{ asset('AdminLTE-3.0.5/dist/img/user8-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="{{ asset('assetsadmin/dist/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -100,7 +105,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="{{ asset('AdminLTE-3.0.5/dist/img/user3-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="{{ asset('assetsadmin/dist/img/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -156,7 +161,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
-      <img src="{{ asset('AdminLTE-3.0.5/dist/img/AdminLTELogo.png') }}"
+      <img src="{{ asset('assetsadmin/dist/img/AdminLTELogo.png')}}"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
@@ -168,7 +173,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('AdminLTE-3.0.5/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('assetsadmin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
@@ -180,36 +185,28 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview">
-            <a href="{{ route('IndexAdmin') }}" class="nav-link">
+          <li class="nav-item has-treeview ">
+            <a href="{{ route('IndexAdmin') }}" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
               </p>
             </a>
           </li>
-         <li class="nav-item has-treeview">
-            <a href="{{ route('kelas') }}" class="nav-link ">
+
+          <li class="nav-item has-treeview menu-open">
+            <a href="{{ route('create.mapel') }}" class="nav-link active">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                DATA KELAS
+                KELAS dan MAPEL
               </p>
-            </a>
-          </li>
+            </a>        
           </li>
           <li class="nav-item has-treeview ">
             <a href="{{ route('pelajaran') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                DATA MATA PELAJARAN
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="{{ route('guru') }}" class="nav-link">
-              <i class="nav-icon  fas fa-child"></i>
-              <p>
-                DATA GURU
+                ABSENSI PEMBELAJARAN
               </p>
             </a>
           </li>
@@ -217,15 +214,7 @@
             <a href="{{ route('kelas') }}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                ABSENSI GURU
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview menu-open">
-            <a href="{{ route('siswa') }}" class="nav-link active">
-              <i class="nav-icon fas fa-child"></i>
-              <p>
-                DATA SISWA
+                PEMBELAJARAN
               </p>
             </a>
           </li>
@@ -233,10 +222,19 @@
             <a href="{{ route('siswa') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                E-Raport Siswa
+                NILAI Siswa
               </p>
             </a>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('siswa') }}" class="nav-link">
+              <i class="nav-icon fas fa-child"></i>
+              <p>
+                DATA SISWA
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -247,19 +245,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../charts/chartjs.html" class="nav-link">
+                <a href="pages/charts/chartjs.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ChartJS</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../charts/flot.html" class="nav-link">
+                <a href="pages/charts/flot.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Flot</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../charts/inline.html" class="nav-link">
+                <a href="pages/charts/inline.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inline</p>
                 </a>
@@ -276,49 +274,49 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../UI/general.html" class="nav-link">
+                <a href="pages/UI/general.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>General</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/icons.html" class="nav-link">
+                <a href="pages/UI/icons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Icons</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/buttons.html" class="nav-link">
+                <a href="pages/UI/buttons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Buttons</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/sliders.html" class="nav-link">
+                <a href="pages/UI/sliders.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sliders</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/modals.html" class="nav-link">
+                <a href="pages/UI/modals.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Modals & Alerts</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/navbar.html" class="nav-link">
+                <a href="pages/UI/navbar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Navbar & Tabs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/timeline.html" class="nav-link">
+                <a href="pages/UI/timeline.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Timeline</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/ribbons.html" class="nav-link">
+                <a href="pages/UI/ribbons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ribbons</p>
                 </a>
@@ -335,25 +333,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../forms/general.html" class="nav-link">
+                <a href="pages/forms/general.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>General Elements</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../forms/advanced.html" class="nav-link">
+                <a href="pages/forms/advanced.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Advanced Elements</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../forms/editors.html" class="nav-link">
+                <a href="pages/forms/editors.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Editors</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../forms/validation.html" class="nav-link">
+                <a href="pages/forms/validation.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Validation</p>
                 </a>
@@ -362,7 +360,7 @@
           </li>
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
-            <a href="../calendar.html" class="nav-link">
+            <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Calendar
@@ -371,7 +369,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../gallery.html" class="nav-link">
+            <a href="pages/gallery.html" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Gallery
@@ -388,19 +386,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../mailbox/mailbox.html" class="nav-link">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inbox</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../mailbox/compose.html" class="nav-link">
+                <a href="pages/mailbox/compose.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Compose</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../mailbox/read-mail.html" class="nav-link">
+                <a href="pages/mailbox/read-mail.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Read</p>
                 </a>
@@ -417,49 +415,49 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../examples/invoice.html" class="nav-link">
+                <a href="pages/examples/invoice.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Invoice</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/profile.html" class="nav-link">
+                <a href="pages/examples/profile.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/e-commerce.html" class="nav-link">
+                <a href="pages/examples/e-commerce.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>E-commerce</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/projects.html" class="nav-link">
+                <a href="pages/examples/projects.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Projects</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/project-add.html" class="nav-link">
+                <a href="pages/examples/project-add.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Add</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/project-edit.html" class="nav-link">
+                <a href="pages/examples/project-edit.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Edit</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/project-detail.html" class="nav-link">
+                <a href="pages/examples/project-detail.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Detail</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/contacts.html" class="nav-link">
+                <a href="pages/examples/contacts.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Contacts</p>
                 </a>
@@ -476,73 +474,73 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../examples/login.html" class="nav-link">
+                <a href="pages/examples/login.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Login</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/register.html" class="nav-link">
+                <a href="pages/examples/register.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Register</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/forgot-password.html" class="nav-link">
+                <a href="pages/examples/forgot-password.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Forgot Password</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/recover-password.html" class="nav-link">
+                <a href="pages/examples/recover-password.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Recover Password</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/lockscreen.html" class="nav-link">
+                <a href="pages/examples/lockscreen.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lockscreen</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/legacy-user-menu.html" class="nav-link">
+                <a href="pages/examples/legacy-user-menu.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Legacy User Menu</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/language-menu.html" class="nav-link">
+                <a href="pages/examples/language-menu.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Language Menu</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/404.html" class="nav-link">
+                <a href="pages/examples/404.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Error 404</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/500.html" class="nav-link">
+                <a href="pages/examples/500.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Error 500</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/pace.html" class="nav-link">
+                <a href="pages/examples/pace.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pace</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/blank.html" class="nav-link">
+                <a href="pages/examples/blank.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Blank Page</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../starter.html" class="nav-link">
+                <a href="starter.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Starter Page</p>
                 </a>
@@ -652,9 +650,15 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <div class="#">
-          <div  align="center">
-            <h1>UBAH DATA SISWA</h1>
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>PROGRESS YANG DI TEMPUH</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">KELAS dan MAPEL</li>
+            </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -663,242 +667,107 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="#">
-            
-            
-            <!-- /.card -->
-            
+        <!-- SELECT2 EXAMPLE -->
 
-          </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <div class="col-md-12">
-            <!-- general form elements disabled -->
-            <div class="card card-warning">
-              <div class="card-header">
-                <h3 class="card-title"   >ISI BIODATA SISWA</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <form action="{{ url('update/siswa/'.$siswa->NIK)}}" method="POST" enctype="multipart/form-data">
-                  @csrf
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- select -->
-                      <div class="form-group">
-                        <label>KELAS</label>
-                        <select name="id" class="form-control" >
-                          @foreach($kelas as $item)
-                            @if($item->id == $siswa->id)
-                              <option value="{{ $item->id}}" selected>{{ $item->jenis_kelas}}</option>
-                            @elseif($item->id != $siswa->id)
-                            <option value="{{ $item->id}}">{{ $item->jenis_kelas}}</option>
-                            @endif
-                          @endforeach
-                        </select>
-                      </div>
-                    </div>
-                  </div>
+        <div class="card card-default">
+          <div class="card-header">
 
+            <h3 class="card-title">Kelas dan Mata Pelajaran (yang di tempuh)</h3>
 
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NIK</label>
-                        <input type="text" readonly name="NIK" class="form-control" value="{{$siswa->NIK}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NIS</label>
-                        <input type="text" name="nis" class="form-control" value="{{$siswa->nis}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA SISWA</label>
-                        <input type="text" name="nama_siswa" class="form-control" value="{{$siswa->nama_siswa}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>TEMPAT TANGGAL LAHIR</label>
-                        <input type="text" name="ttl" class="form-control" value="{{$siswa->ttl}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label>FOTO SISWA</label>
-                      <div class="custom-file">
-                        <input type="file" name="foto_siswa" class="custom-file-input" value="$siswa->foto_siswa" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">{{$siswa->foto_siswa}}</label>
-                      </div>
-                      <img class="mt-2" src="{{ URL::to($siswa->foto_siswa)}}" height="150px;" width="200px;" >
-                    </div>
-                  </div>
-                      <!-- radio -->
-                  <div class="col-sm-6">
-                      <div class="form-group">
-                        <label> JENIS KELAMIN</label>
-                        <!-- @if($siswa->jenis_kelamin == "LAKI-LAKI")
-                            <select class="form-control ">
-                              <option value="LAKI-LAKI" selected>Laki - Laki</option>
-                              <option value="PEREMPUAN">PEREMPUAN</option>
-                            </select>
-                        @elseif($siswa->jenis_kelamin == "PEREMPUAN")
-                            <select  class="form-control ">
-                              <option value="LAKI-LAKI">LAKI - LAKI</option>
-                              <option value="PEREMPUAN" selected>PEREMPUAN</option>
-                            </select>
-                        @endif -->
-                        <select class="form-control" name="jenis_kelamin">
-                              <option value="{{$siswa->jenis_kelamin }}">-Pilih-</option>
-                              <option value="LAKI-LAKI">LAKI-LAKI</option>
-                              <option value="PEREMPUAN">PEREMPUAN</option>                             
-                        </select>
-                    </div>
-                  </div>
-                 </div>   
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>AGAMA</label>
-                        <input type="text" name="agama" value="{{$siswa->agama}}"  class="form-control" >
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PENDIDIKAN SEBELUMNYA</label>
-                        <input type="text" name="pendidikan_sebelumnya" class="form-control" value="{{$siswa->pendidikan_sebelumnya}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT SISWA</label>
-                        <textarea class="form-control" name="alamat_siswa" rows="3" >{{$siswa->alamat_siswa}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA AYAH</label>
-                        <input type="text" name="nama_ayah" class="form-control" value="{{$siswa->nama_ayah}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA IBU</label>
-                        <input type="text" name="nama_ibu" class="form-control" value="{{$siswa->nama_ibu}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN AYAH</label>
-                        <input type="text" name="pekerjaan_ayah" class="form-control" value="{{$siswa->pekerjaan_ayah}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN IBU</label>
-                        <input type="text" name="pekerjaan_ibu" class="form-control" value="{{$siswa->pekerjaan_ibu}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT AYAH</label>
-                        <textarea class="form-control" name="alamat_ayah" rows="3" >{{$siswa->alamat_ayah}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT IBU</label>
-                        <textarea class="form-control" name="alamat_ibu" rows="3" >{{$siswa->alamat_ibu}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA WALI</label>
-                        <input type="text" name="nama_wali" class="form-control" value="{{$siswa->nama_wali}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN WALI</label>
-                        <input type="text" name="pekerjaan_wali" class="form-control" value="{{$siswa->pekerjaan_wali}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT WALI</label>
-                        <textarea class="form-control" name="alamat_wali" rows="3" >{{$siswa->alamat_wali}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group" align=" right " >
-                         <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
-                      </div>
-                    </div>
-                  </div>
-
-                </form>
-              </div>
-              <!-- /.card-body -->
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
             </div>
-            <!-- /.card -->
-            
-          <!--/.col (right) -->
+          </div>
+          <div class="card-body table-responsive p-0">
+                @if($message = Session::get('success'))
+                <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">{{ $message }}</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+          </div>
+                    <!-- <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div> -->
+                @endif
+          <!-- /.card-header -->
+          <form role="form" action="{{ route('tambah.mapel')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+              <div class="form-group">
+                  <label>KELAS yang di Tempuh</label>
+                  
+                  <select class="select2" name="id_kelas"  data-placeholder="Select a State" style="width: 100%;">
+                  @foreach($kelas as $item)
+                              <option value="{{ $item->id}}">{{ $item->jenis_kelas}}</option>
+                  @endforeach
+                  </select>
+                </div>
+                <!-- /.form-group -->
+                
+                <!-- /.form-group -->
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Mata Pelajaran yang di tempuh</label>
+                  <select class="select2" name="mapel[]" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+                  @foreach($pelajaran as $p)
+                              <option value="{{ $p->id}}">{{ $p->mata_pelajaran}}</option>
+                  @endforeach
+                  </select>
+                </div>
+                
+                <!-- /.form-group -->
+                
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                  <div class="form-group">
+                  <button type="submit" class="btn btn-block btn-primary btn-sm">Simpan</button>
+                  </div>
+              </div>
+              
+              <!-- /.col -->
+            </div>
+          
+            <!-- /.row -->
+
+            <!-- /.row -->
+          </div>
+          </form>
+          <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>KELAS</th>
+                    <th>MATA PELAJARAN</th>
+                    <th>STATUS</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  @foreach($mapel as $m)
+                    <tr>
+                      <td>{{ $m->jenis_kelas}}</td>
+                      <td>{{ $m->mata_pelajaran}}</td>
+                      <td>
+                      <a class="btn btn-block bg-gradient-danger" href="{{ URL::to('delete/mapel/'.$m->id)}}" onclick="return confirm('APAKAH Mapel Guru  INI AKAN DIHAPUS?')">Hapus</a>
+                      </td>
+                    </tr>
+                    @endforeach
+                  </tfoot>
+                </table>
+          <!-- /.card-body -->
+
         </div>
-        <!-- /.row -->
+ 
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
@@ -921,19 +790,44 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{ asset('AdminLTE-3.0.5/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assetsadmin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset('AdminLTE-3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- bs-custom-file-input -->
-<script src="{{ asset('AdminLTE-3.0.5/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+<script src="{{ asset('assetsadmin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Select2 -->
+<script src="{{ asset('assetsadmin/plugins/select2/js/select2.full.min.js') }}"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="{{ asset('assetsadmin/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js') }}"></script>
+<!-- InputMask -->
+<script src="{{ asset('assetsadmin/plugins/moment/moment.min.js') }}"></script>
+<script src="{{ asset('assetsadmin/plugins/inputmask/min/jquery.inputmask.bundle.min.js') }}"></script>
+<!-- date-range-picker -->
+<script src="{{ asset('assetsadmin/plugins/daterangepicker/daterangepicker.js') }}"></script>
+<!-- bootstrap color picker -->
+<script src="{{ asset('assetsadmin/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{ asset('assetsadmin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+<!-- Bootstrap Switch -->
+<script src="{{ asset('assetsadmin/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('AdminLTE-3.0.5/dist/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('assetsadmin/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('AdminLTE-3.0.5/dist/js/demo.js') }}"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-  bsCustomFileInput.init();
-});
+<script src="{{ asset('assetsadmin/dist/js/demo.js') }}"></script>
+<script src="{{ asset('AdminLTE-3.0.5/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('AdminLTE-3.0.5/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('AdminLTE-3.0.5/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('AdminLTE-3.0.5/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<!-- Page script -->
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+
+  })
 </script>
 </body>
 </html>

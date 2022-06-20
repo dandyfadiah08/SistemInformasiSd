@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Dashboard</title>
+  <title>Guru | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -11,7 +11,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
-  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/tempusdominus-bootstrap-4/css/tempusdxominus-bootstrap-4.min.css') }}">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{ asset('assetsadmin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- JQVMap -->
@@ -60,7 +60,6 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
-
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-comments"></i>
@@ -150,11 +149,6 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="dropdown"  href="{{ route('LOGOUT') }}">
-          <i class="fas fa-sign-out-alt" style="color:red">LogOut</i>
-        </a> 
-      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -165,7 +159,7 @@
     <a href="{{ route('IndexAdmin') }}" class="brand-link">
       <img src="{{ asset('assetsadmin/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">ADMINISTRATOR</span>
+      <span class="brand-text font-weight-light">GURU PENDIDIKAN</span>
     </a>
 
     <!-- Sidebar -->
@@ -195,10 +189,10 @@
           </li>
 
           <li class="nav-item has-treeview\">
-            <a href="{{ route('kelas') }}" class="nav-link">
+            <a href="{{ route('create.mapel') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                DATA KELAS
+                KELAS dan MAPEL
               </p>
             </a>        
           </li>
@@ -206,15 +200,7 @@
             <a href="{{ route('pelajaran') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                DATA MATA PELAJARAN
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="{{ route('guru') }}" class="nav-link">
-              <i class="nav-icon  fas fa-child"></i>
-              <p>
-                DATA GURU
+                ABSENSI PEMBELAJARAN
               </p>
             </a>
           </li>
@@ -222,7 +208,15 @@
             <a href="{{ route('kelas') }}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                ABSENSI GURU
+                PEMBELAJARAN
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('siswa') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                NILAI Siswa
               </p>
             </a>
           </li>
@@ -234,14 +228,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="{{ route('siswa') }}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                E-Raport Siswa
-              </p>
-            </a>
-          </li>
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>

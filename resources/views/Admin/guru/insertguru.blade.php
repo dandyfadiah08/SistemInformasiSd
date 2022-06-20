@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Edit Siswa</title>
+  <title>Admin | Tambah GURU</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -205,8 +205,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="{{ route('guru') }}" class="nav-link">
+          <li class="nav-item has-treeview  menu-open ">
+            <a href="{{ route('guru') }}" class="nav-link active">
               <i class="nav-icon  fas fa-child"></i>
               <p>
                 DATA GURU
@@ -221,8 +221,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview menu-open">
-            <a href="{{ route('siswa') }}" class="nav-link active">
+          <li class="nav-item has-treeview">
+            <a href="{{ route('siswa') }}" class="nav-link ">
               <i class="nav-icon fas fa-child"></i>
               <p>
                 DATA SISWA
@@ -654,7 +654,7 @@
       <div class="container-fluid">
         <div class="#">
           <div  align="center">
-            <h1>UBAH DATA SISWA</h1>
+            <h1>INSERT DATA GURU</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -678,214 +678,97 @@
             <!-- general form elements disabled -->
             <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title"   >ISI BIODATA SISWA</h3>
+                <h3 class="card-title"   >ISI PROFILE GURU</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form action="{{ url('update/siswa/'.$siswa->NIK)}}" method="POST" enctype="multipart/form-data">
+                <form role="form" action="{{ route('tambah.guru')}}" method="POST" enctype="multipart/form-data">
                   @csrf
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- select -->
-                      <div class="form-group">
-                        <label>KELAS</label>
-                        <select name="id" class="form-control" >
-                          @foreach($kelas as $item)
-                            @if($item->id == $siswa->id)
-                              <option value="{{ $item->id}}" selected>{{ $item->jenis_kelas}}</option>
-                            @elseif($item->id != $siswa->id)
-                            <option value="{{ $item->id}}">{{ $item->jenis_kelas}}</option>
-                            @endif
-                          @endforeach
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
 
                   <div class="row">
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>NIK</label>
-                        <input type="text" readonly name="NIK" class="form-control" value="{{$siswa->NIK}}">
+                        <label>NUPTK</label>
+                        <input type="number" name="NUPTK" class="form-control" placeholder="Enter ...">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>NIS</label>
-                        <input type="text" name="nis" class="form-control" value="{{$siswa->nis}}">
+                        <label>NAMA LENGKAP</label>
+                        <input type="text" name="nama_guru" class="form-control" placeholder="Enter ...">
                       </div>
                     </div>
                   </div>
 
                   <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA SISWA</label>
-                        <input type="text" name="nama_siswa" class="form-control" value="{{$siswa->nama_siswa}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>TEMPAT TANGGAL LAHIR</label>
-                        <input type="text" name="ttl" class="form-control" value="{{$siswa->ttl}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label>FOTO SISWA</label>
-                      <div class="custom-file">
-                        <input type="file" name="foto_siswa" class="custom-file-input" value="$siswa->foto_siswa" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">{{$siswa->foto_siswa}}</label>
-                      </div>
-                      <img class="mt-2" src="{{ URL::to($siswa->foto_siswa)}}" height="150px;" width="200px;" >
-                    </div>
-                  </div>
-                      <!-- radio -->
                   <div class="col-sm-6">
                       <div class="form-group">
                         <label> JENIS KELAMIN</label>
-                        <!-- @if($siswa->jenis_kelamin == "LAKI-LAKI")
-                            <select class="form-control ">
-                              <option value="LAKI-LAKI" selected>Laki - Laki</option>
-                              <option value="PEREMPUAN">PEREMPUAN</option>
-                            </select>
-                        @elseif($siswa->jenis_kelamin == "PEREMPUAN")
-                            <select  class="form-control ">
-                              <option value="LAKI-LAKI">LAKI - LAKI</option>
-                              <option value="PEREMPUAN" selected>PEREMPUAN</option>
-                            </select>
-                        @endif -->
                         <select class="form-control" name="jenis_kelamin">
-                              <option value="{{$siswa->jenis_kelamin }}">-Pilih-</option>
+                              <option value="">-Pilih-</option>
                               <option value="LAKI-LAKI">LAKI-LAKI</option>
                               <option value="PEREMPUAN">PEREMPUAN</option>                             
                         </select>
                     </div>
                   </div>
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>TEMPAT TANGGAL LAHIR</label>
+                        <input type="text" name="ttl" class="form-control" placeholder="Tempat,Tanggal-Bulan-Tahun">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                  <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>NIP</label>
+                        <input type="number" name="NIP" class="form-control" placeholder="Enter ...">
+                      </div>
+                    </div>
+                      <!-- radio -->
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                        <label> STATUS KEPEGAWAIAN </label>
+                        <select class="form-control" name="status_kepegawaian">
+                              <option value="">-Pilih-</option>
+                              <option value="PNS">PNS</option>
+                              <option value="GURU HONORER">GURU HONORER</option>
+                              <option value="TENAGA HONORER SEKOLAH<">TENAGA HONORER SEKOLAH</option>                               
+                        </select>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                        <label> Jenis_PTK </label>
+                        <select class="form-control" name="jenis_ptk">
+                              <option value="">-Pilih-</option>
+                              <option value="KEPALA SEKOLAH">KEPALA SEKOLAH</option>
+                              <option value="GURU KELAS">GURU KELAS</option>
+                              <option value="GURU HONORER">GURU HONORER</option>
+                              <option value="PEREMPUAN">TENAGA  SEKOLAH LAINYA</option>                               
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                      <label>TOTAL JJM</label>
+                        <input type="number" name="total_JJM" class="form-control" placeholder="Enter ...">
+                    </div>
+                  </div>
                  </div>   
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>AGAMA</label>
-                        <input type="text" name="agama" value="{{$siswa->agama}}"  class="form-control" >
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PENDIDIKAN SEBELUMNYA</label>
-                        <input type="text" name="pendidikan_sebelumnya" class="form-control" value="{{$siswa->pendidikan_sebelumnya}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT SISWA</label>
-                        <textarea class="form-control" name="alamat_siswa" rows="3" >{{$siswa->alamat_siswa}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA AYAH</label>
-                        <input type="text" name="nama_ayah" class="form-control" value="{{$siswa->nama_ayah}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA IBU</label>
-                        <input type="text" name="nama_ibu" class="form-control" value="{{$siswa->nama_ibu}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN AYAH</label>
-                        <input type="text" name="pekerjaan_ayah" class="form-control" value="{{$siswa->pekerjaan_ayah}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN IBU</label>
-                        <input type="text" name="pekerjaan_ibu" class="form-control" value="{{$siswa->pekerjaan_ibu}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT AYAH</label>
-                        <textarea class="form-control" name="alamat_ayah" rows="3" >{{$siswa->alamat_ayah}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT IBU</label>
-                        <textarea class="form-control" name="alamat_ibu" rows="3" >{{$siswa->alamat_ibu}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>NAMA WALI</label>
-                        <input type="text" name="nama_wali" class="form-control" value="{{$siswa->nama_wali}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>PEKERJAAN WALI</label>
-                        <input type="text" name="pekerjaan_wali" class="form-control" value="{{$siswa->pekerjaan_wali}}">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>ALAMAT WALI</label>
-                        <textarea class="form-control" name="alamat_wali" rows="3" >{{$siswa->alamat_wali}}</textarea>
-                      </div>
-                    </div>
-                  </div>
 
                   <div class="row">
                     <div class="col-sm-12">
                       <!-- textarea -->
                       <div class="form-group" align=" right " >
-                         <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                         <button class="btn btn--radius-2 btn--blue" type="submit">SIMPAN</button>
                       </div>
                     </div>
                   </div>

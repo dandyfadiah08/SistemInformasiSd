@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class pelajaran extends Model
+class progressLogin extends Model
 {
-    protected $table='pelajaran';
+    protected $table='progressLogin';
     protected $fillable = [
-        'mata_pelajaran'
+        'NUPTK'
     ];
 }

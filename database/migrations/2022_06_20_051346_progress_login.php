@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePelajaranTable extends Migration
+class ProgressLogin extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreatePelajaranTable extends Migration
      */
     public function up()
     {
-        Schema::create('pelajaran', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('mata_pelajaran');
+        Schema::create('progressLogin', function (Blueprint $table) {
+            $table->increments('id')->primarykeys();
+            $table->bigInteger('NUPTK');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreatePelajaranTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelajaran');
+        //
     }
 }
