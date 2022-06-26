@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\pelajaran;
 use App\kelas;
+use App\guru;
 use App\mapel;
 use App\progressLogin;
 use DB;
@@ -17,8 +18,14 @@ class data extends Controller
         $kelas = kelas::all();
         $pelajaran = pelajaran::all();
         $NUPTK = progressLogin::get();
+        $guru = guru::get();
         foreach ($NUPTK as $id) {
-            $tampID['NUPTK'] = $id->NUPTK;
+            $tampid['NUPTK'] = $id->NUPTK;
+        }
+        foreach ($guru as $g) {
+            if ($g->NUPTK == $tampid['NUPTK']) {
+                $tampID['NUPTK'] = $g->id;
+            }
         }
         $mapel = mapel::select('mapel.id','kelas.jenis_kelas','pelajaran.mata_pelajaran')->join('kelas','kelas.id','=','mapel.id_kelas')->join('pelajaran','pelajaran.id','=','mapel.mapel')->where('mapel.NUPTK',$tampID['NUPTK'])->get();
     	 return view('guru.kelas-mapel.insertmapel',['kelas'=>$kelas,'mapel'=>$mapel,'pelajaran'=>$pelajaran]);
@@ -26,9 +33,16 @@ class data extends Controller
     public function Store(Request $request){
         $tampID = array();
         $tampall = array();
+        $tampNUPTK = array();
         $NUPTK = progressLogin::get();
+        $guru = guru::get();
         foreach ($NUPTK as $id) {
-            $tampID['NUPTK'] = $id->NUPTK;
+            $tampNUPTK['NUPTK'] = $id->NUPTK;
+        }
+        foreach ($guru as $g) {
+            if ($g->NUPTK == $tampNUPTK['NUPTK']) {
+                $tampID['NUPTK'] = $g->id;
+            }
         }
         
         $tampID['mapel'] = $request ->mapel;

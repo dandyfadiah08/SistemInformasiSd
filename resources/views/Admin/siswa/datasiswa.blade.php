@@ -207,7 +207,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview ">
-            <a href="{{ route('kelas') }}" class="nav-link">
+            <a href="{{ route('absenGuru') }}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 ABSENSI GURU
@@ -652,7 +652,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <div>
-              <a href="{{ route('create.siswa') }}"><button type="button" class="btn btn-block btn-primary">TAMBAH KELAS</button></a>
+              <a href="{{ route('create.siswa') }}"><button type="button" class="btn btn-block btn-primary">Tambah Siswa</button></a>
               </div>
             </ol>
           </div>

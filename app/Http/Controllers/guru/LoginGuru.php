@@ -16,6 +16,7 @@ class LoginGuru extends Controller
     public function loginguru(Request $request){
         $data_NUPTK['NUPTK'] = $request->NUPTK;
         $NUPTK = guru::where('NUPTK','=',$request->NUPTK)->first();
+        
         if ($NUPTK) {
             $tambah_NUPTK = DB::table('progressLogin')->insert($data_NUPTK);
             return view('guru.index');

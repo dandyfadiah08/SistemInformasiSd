@@ -14,8 +14,9 @@ class CreateMapelTable extends Migration
     public function up()
     {
         Schema::create('mapel', function (Blueprint $table) {
-            $table->id();
-            $table->integer('NUPTK');
+            $table->increments('id')->primarykeys();
+            $table->integer('NUPTK')->unsigned();
+            $table->foreign('NUPTK')->references('id')->on('guru')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('id_kelas')->unsigned();
             $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('mapel')->unsigned();

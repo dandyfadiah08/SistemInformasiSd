@@ -219,7 +219,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview ">
-            <a href="{{ route('kelas') }}" class="nav-link">
+            <a href="{{ route('absenGuru') }}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 ABSENSI GURU

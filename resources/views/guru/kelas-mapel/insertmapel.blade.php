@@ -186,7 +186,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview ">
-            <a href="{{ route('IndexAdmin') }}" class="nav-link ">
+            <a href="{{ route('IndexGuru') }}" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -203,21 +203,43 @@
             </a>        
           </li>
           <li class="nav-item has-treeview ">
-            <a href="{{ route('pelajaran') }}" class="nav-link">
+            <a href="{{ route('absenguru') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 ABSENSI PEMBELAJARAN
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview ">
-            <a href="{{ route('kelas') }}" class="nav-link">
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                PEMBELAJARAN
+              PEMBELAJARAN
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('materi.tugas') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Materi dan Tugas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('uts.siswa') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>UTS</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('pas.siswa') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PAS</p>
+                </a>
+              </li>
+            </ul>
           </li>
+
           <li class="nav-item has-treeview">
             <a href="{{ route('siswa') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
